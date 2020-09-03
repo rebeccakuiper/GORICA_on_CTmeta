@@ -7,19 +7,18 @@ library(CTmeta)
 ?CTmeta
 citation("CTmeta")
 
-# Input needed in examples below with q=2 variables and S=3 primary studies
+# Input needed in example below with q=2 variables and S=3 primary studies
 #
 N <- matrix(c(643, 651, 473))
 DeltaT <- matrix(c(2, 3, 1))   # Time interval used in the 3 primary studies
 DeltaTStar <- 1                # Targeted time interval
 #
-# I will use the example matrices stored in the package.
+# Here, the example matrices stored in the package are used.
 # These contain the estimates for all 3 primary studies, stacked in one matrix.
 Phi <- myPhi
 SigmaVAR <- mySigmaVAR
 
-## Example without moderators ##
-# Random effects model ("FEorRE = 2") #
+## Example CTmeta: random effects model ("FEorRE = 2") without moderators ##
 out_CTmeta <- CTmeta(N, DeltaT, DeltaTStar, Phi, SigmaVAR, FEorRE = 2)
 out_CTmeta
 
